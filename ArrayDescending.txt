@@ -1,0 +1,7 @@
+const array = [9,2,1,9,0,-1];
+
+array.sort(function(a, b) {
+  return b - a;
+});
+
+console.log(array);

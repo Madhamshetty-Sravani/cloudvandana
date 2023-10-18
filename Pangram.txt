@@ -1,0 +1,30 @@
+import java.util.*;
+public class MyClass {
+    public static boolean isPangram(String str) {
+        boolean[] alphabet = new boolean[26];
+        str = str.toLowerCase();
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if ('a' <= c && c <= 'z') {
+                alphabet[c - 'a'] = true;
+            }
+        }
+        for (boolean letter : alphabet) {
+            if (!letter) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+        boolean isPangram = isPangram(text);
+        if (isPangram) {
+            System.out.println("Given string is a pangram.");
+        } else {
+            System.out.println("Given string is not a pangram.");
+        }
+    }
+}
